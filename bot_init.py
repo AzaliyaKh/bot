@@ -1,9 +1,13 @@
 from aiogram import Bot, Dispatcher
 import logging
 
-API_TOKEN = '7969649315:AAFSUlkFX9-RBT0s-c_EW8B9yLcc-Yizl-w'
+from aiogram.fsm.state import StatesGroup, State
+from decouple import config
 
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=config("API_TOKEN"))
 dp = Dispatcher()
 
 logger = logging.getLogger(__name__)
+
+class Form(StatesGroup):
+    set_reminder = State()
