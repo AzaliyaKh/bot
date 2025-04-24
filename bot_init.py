@@ -10,4 +10,5 @@ dp = Dispatcher()
 logger = logging.getLogger(__name__)
 
 class Form(StatesGroup):
+    set_role = State()
     set_reminder = State()
